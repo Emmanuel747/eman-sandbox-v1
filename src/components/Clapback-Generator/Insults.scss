@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;500&display=swap');
+
+body {
+  background-color: gold;
+}
+
+li span{
+  font-weight: bold;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+
+button {
+  max-width: 250px;
+  padding: 6px;
+  font-weight: bold;
+}
+
+.myHeader {
+  display: flex;
+  flex-direction: column;
+  margin: 1px 20px;
+  align-items: center;
+}
+
+.userInfo {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0px 20px
+}
+
+#root {
+  max-width: 60vw;
+  align-self: left;
+}
+
+//Tooltip Practice
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgba(0, 0, 0, 0.767);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  /* Fade effect*/
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.tooltip:hover .tooltiptext {
+  width: 100px;
+  visibility: visible;
+  top: 20px;
+  left: 105%;
+  opacity: 1;
+}

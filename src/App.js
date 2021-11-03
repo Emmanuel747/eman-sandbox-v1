@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import RandomAPI from './components/Clapback-Generator/Insults';
+import CreateReact from './components/ReactPage/CreateReact';
+
+
+import './App.scss';
+
+
 
 function App() {
+  useEffect(() => {
+    document.title = `Eman's API Sandbox\u2122 - US`;
+  }, []);
+  const [isLogo, setIsLogo] = useState();
+  const [isMaxNum, setMaxNum] = useState(77);
+  const [isUser, setUser] = useState({});
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <CreateReact />
+        </Route>
+        <Route path="/Clap-backs">
+          <RandomAPI 
+            maxNum={isMaxNum} setMaxNum={setMaxNum}
+            user={isUser} setUser={setUser}
+          />
+        </Route>
+      </Switch>
+    </Router>
+
   );
 }
 
