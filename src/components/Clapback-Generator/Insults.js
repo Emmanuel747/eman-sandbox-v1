@@ -26,15 +26,28 @@ const RandomAPI = ({maxNum, user, setUser}) => {
     .then(data => {
       console.log(data, "Random number was: ", maxNum);
       setUser(data);
+      console.log(emanMap1.get(2));
+      emanMap1.set("my", "Emmanuel");
+      console.log(emanMap1);
 
     })
     .catch(err => {throw err})
   }
-      // completed: false
-      // id: 97
-      // title: "dolorum laboriosam eos qui iure aliquam"
-      // userId: 5
-      const {completed, id, title, userId} = user
+    let emanMap1 = new Map([
+      [1, "first"],
+      [2, "second"],
+      [3, "third"],
+      [55, "Doggo"]
+    ]);
+    
+    let emanMap2 = {
+      name: "",
+      Gender: "",
+
+    }
+
+    //data = {userId: 1, id: 8, title: 'quo adipisci enim quam ut ab', completed: true}
+    const {completed, id, title, userId} = user
   return (
     <div className="pageContainer">
       <div className="myHeader">
